@@ -7,4 +7,10 @@ const [sigStr, pubKeyStr] = await generateEthereumSignature(msgStr);
 console.log(sigStr);
 console.log(pubKeyStr);
 
-verifyEthereumSignature(pubKeyStr, sigStr, msgStr)
+const valid = await verifyEthereumSignature(pubKeyStr, sigStr, msgStr);
+
+if(valid) {
+    console.log("Woohoo!");
+} else {
+    console.log("Boo")
+}
